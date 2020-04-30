@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+.side {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: teal;
+}
+
+h2 {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+}
+
+.score {
+  font-size: 5rem;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+.selection {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  border: 1px red;
+  width: 100%;
+}
+
+.center {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  z-index: 1;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: orange;
+}
+
+.banner {
+  text-align: center;
+}
+
+.choices {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  pointer-events: all;
+}
+
+.choices img {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+}
+
+.choices img:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Press Start 2P", cursive;
+}
+
+.main-wrapper {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.won {
+  background-color: lime;
+}
+
+.draw {
+  background-color: yellow;
+}
+
+.lost {
+  background-color: red;
+}
+/*# sourceMappingURL=styles.css.map */

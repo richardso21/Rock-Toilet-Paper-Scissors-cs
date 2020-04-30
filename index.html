@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Toilet Paper, and Scissors</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="media/rock.png" />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="side user">
+        <h2>You</h2>
+        <span class="score" id="user-score">0</span>
+        <div class="selection"></div>
+      </div>
+
+      <div class="center">
+        <h1 class="banner">
+          Welcome to Rock, Toilet Paper, and Scissors! Choose wisely...
+        </h1>
+
+        <div id="choices" class="choices">
+          <img id="rock" src="media/rock.png" alt="" />
+          <img id="paper" src="media/paper.png" alt="" />
+          <img id="scissors" src="media/scissors.png" alt="" />
+        </div>
+      </div>
+
+      <div class="side cpu">
+        <h2>CPU</h2>
+        <span class="score" id="cpu-score">0</span>
+        <div class="selection"></div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

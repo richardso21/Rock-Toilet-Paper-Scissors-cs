@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import "parts/_sides.scss";
+@import "parts/_center.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Press Start 2P", cursive;
+}
+
+.main-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.won {
+  background-color: rgb(0, 255, 0);
+}
+
+.draw {
+  background-color: yellow;
+}
+
+.lost {
+  background-color: red;
+}
