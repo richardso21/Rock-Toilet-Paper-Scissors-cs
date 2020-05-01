@@ -1,7 +1,24 @@
 let userScore = 0;
 let cpuScore = 0;
-const Actual = { 1: "rock", 2: "paper", 3: "scissors" };
-const Beats = { 1: "paper", 2: "scissors", 3: "rock" };
+
+const Actual = ["rock", "paper", "scissors"];
+const Beats = ["paper", "scissors", "rock"];
+
+const WonMessages = [
+  "Hmm... A worthy opponent",
+  "You must be cheating!",
+  "What great use of tactics and strategy I'm witnessing.",
+];
+const LostMessages = [
+  "Pathetic",
+  "You weren't that good anyways",
+  "This is all you've got?",
+];
+const DrawMessages = [
+  "NO! It's a draw!!!",
+  "You're only lucky this time...",
+  "I call hax",
+];
 
 main();
 
@@ -16,27 +33,26 @@ function main() {
 }
 
 function vsCpu(userChoice) {
-  const cpuChoice = Math.ceil(Math.random() * 3);
+  const cpuChoice = Math.floor(Math.random() * 3);
 
-  let cls, message;
+  let cls;
 
   if (Beats[cpuChoice] === userChoice) {
     userScore++;
     cls = "won";
-    message = "Hmm... A worthy opponent.";
   } else if (Actual[cpuChoice] === userChoice) {
     cls = "draw";
-    message = "NO! It's a draw!";
   } else {
     cpuScore++;
     cls = "lost";
-    message = "You weren't that good anyway...";
   }
 
-  updateInterface(userChoice, Actual[cpuChoice], cls, message);
+  updateInterface(userChoice, Actual[cpuChoice], cls);
 }
 
-function updateInterface(userChoice, cpuChoice, cls, message) {
+function updateInterface(userChoice, cpuChoice, cls) {
+  const message = chooseMessage(cls);
+
   const center = document.querySelector(".center");
   const banner = document.querySelector(".banner");
   const choices = document.getElementById("choices");
@@ -45,8 +61,8 @@ function updateInterface(userChoice, cpuChoice, cls, message) {
   const cpu_side = document.querySelector(".cpu .selection img");
 
   center.classList.toggle(cls);
-  banner.innerHTML = message;
   choices.style.pointerEvents = "none";
+  banner.innerHTML = message;
   user_side.src = `media/${userChoice}.png`;
   cpu_side.src = `media/${cpuChoice}.png`;
 
@@ -56,9 +72,28 @@ function updateInterface(userChoice, cpuChoice, cls, message) {
     choices.style.pointerEvents = "all";
     user_side.src = "";
     cpu_side.src = "";
-  }, 1500);
+  }, 2000);
 
   updateScores();
+}
+
+function chooseMessage(cls) {
+  const messageIndex = Math.floor(Math.random() * 3);
+  let message;
+  switch (cls) {
+    case "won":
+      message = WonMessages[messageIndex];
+      break;
+
+    case "lost":
+      message = LostMessages[messageIndex];
+      break;
+
+    default:
+      message = DrawMessages[messageIndex];
+      break;
+  }
+  return message;
 }
 
 function updateScores() {
