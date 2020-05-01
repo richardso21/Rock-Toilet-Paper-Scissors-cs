@@ -32,18 +32,30 @@ function vsCpu(userChoice) {
     cls = "lost";
     message = "You weren't that good anyway...";
   }
+
+  updateInterface(userChoice, Actual[cpuChoice], cls, message);
+}
+
+function updateInterface(userChoice, cpuChoice, cls, message) {
   const center = document.querySelector(".center");
   const banner = document.querySelector(".banner");
   const choices = document.getElementById("choices");
 
+  const user_side = document.querySelector(".user .selection img");
+  const cpu_side = document.querySelector(".cpu .selection img");
+
   center.classList.toggle(cls);
   banner.innerHTML = message;
   choices.style.pointerEvents = "none";
+  user_side.src = `media/${userChoice}.png`;
+  cpu_side.src = `media/${cpuChoice}.png`;
 
   setTimeout(() => {
     center.classList.toggle(cls);
     banner.innerHTML = "Choose wisely...";
     choices.style.pointerEvents = "all";
+    user_side.src = "";
+    cpu_side.src = "";
   }, 1500);
 
   updateScores();

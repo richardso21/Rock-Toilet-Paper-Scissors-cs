@@ -29,8 +29,10 @@ h2 {
 .selection {
   -ms-flex-preferred-size: 70%;
       flex-basis: 70%;
-  border: 1px red;
-  width: 100%;
+}
+
+.selection img {
+  padding: 25% 0;
 }
 
 .center {

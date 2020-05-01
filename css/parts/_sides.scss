@@ -17,6 +17,7 @@ h2 {
 
 .selection {
   flex-basis: 70%;
-  border: 1px red;
-  width: 100%;
+  img {
+    padding: 25% 0;
+  }
 }
